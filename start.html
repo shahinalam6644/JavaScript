@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+    .anyClass {
+      height:500px;
+      overflow-y: scroll;
+    }
+    .closebtndv, .myicon{
+        display: none;
+      }
+     .mydivemenu, .myicon {
+		padding: 15px;
+		background: #7a7a7a;
+	}
+	.anyClass span{
+		font-size: 14px;
+		color: #4a4a4a;
+	}
+      
+    @media screen and (max-device-width: 830px) {
+      .mydivemenu, .myicon{ 
+        padding: 15px;
+        background: #7a7a7a;
+      }
+      .closeBotton{ 
+        display: inline-block;
+        background: #bdbdbd;
+        padding: 8px;
+        border-radius: 13px;
+      }
+      .closebtndv{
+        width: 100%;
+        text-align: center;
+      }
+
+      .closebtndv, .myicon{
+        display: inline-block;
+      }
+
+      .anyClass{
+        transform: translateX(-100%);
+        transition: transform .35s ease;
+        display: table-column; 
+      }
+
+      .navbarContent{
+        transform: translateX(-100%);
+        transition: transform .35s ease;
+        display: table-column; 
+      }
+
+      .navbarContent-show{
+        transform: translateX(0%);
+        transition: transform .35s ease;
+        display: block; 
+      }
+
+      .myicon-show{
+        display: none;
+      }
+
+
+    }
+    
+    
+    
+    
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center"> Locate us</h1>
+      <div class="row mydivemenu">
+        <div class="col-md-3">
+          <select id="inputState" onChange="addressChange(this.value)" class="form-control">
+            <option selected value="all">ALL</option>
+            <option value="dhaka" >Dhaka</option>
+            <option value="gulshan">Gulshan</option>
+            <option value="chattogram">Chattogram</option>
+            <option value="dhanmondi" >Dhanmondi</option>
+            <option value="mohakhali">Mohakhali DOHS</option>
+            <option value="gazipur">Gazipur</option>
+            <option value="narayanganj">Narayanganj</option>
+            <option value="sylhet">Sylhet</option>
+            <option value="uttara">Uttara</option> 
+          </select>
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="inputCity" placeholder="Enter your location">
+        </div>
+        <div class="col-md-3">
+          <input type="submit" class="form-control text-danger" value="IDLC Securities" id="inputCity">
+        </div>
+      </div>
+      <i class="myicon" onclick="navbarContent()" id="myiconn">☰</i>
+      <hr/>
+      <div class="row">         
+        <div class="col-md-4 col-sm-12">
+          <ul class="nav nav-pills nav-stacked anyClass" id="navbarContent">
+            <div class="closebtndv" ><p onclick="closeContent()" class="text-center closeBotton">x close</p></div>
+            <div id="dhakaaddress" role="alert" onclick="dhaka(), closeContent()"> 
+              <p class="font-weight-bold text-danger">Head Office</p>
+              <span>DR Tower (4th Floor) Bir Protik Gazi Golam Dastagir Road Purana Paltan, Dhaka 1000<br/>
+              Telephone : +88 09609994352, 16409<br/>Email : securities@idlc.com<br/>Fax : +880 (2) 9574366</span> 
+              <hr/>
+            </div>
+            <div id="gulshanaddress" role="alert" onclick="gulshan(), closeContent()">
+              <p class="font-weight-bold text-danger">Gulshan Branch</p> 
+              <span>Symphony Tower (4th Floor, South Part),  Plot #S.E (F)-9, Road #142, Gulshan- 1, Dhaka-1212<br/>Telephone : +88 09609994352, 16409 (Hotline)<br/>Email : idlcslgulshan@idlc.com<br/>Fax : +880 (2) 9883898 </span><hr/>
+            </div>
+            <div id="chattogramaddress" role="alert" onclick="chattogram(), closeContent()">
+              <p class="font-weight-bold text-danger">Chattogram Branch</p> 
+              <span>Ayub Trade Centre (6th Floor) 1269/B Sk. Mujib Road Agrabad Commercial Area Chattogram 4100<br/>Telephone : +88 09609994352, 16409 (Hotline)<br/>Email : idlcslctg@idlc.com<br/>Fax : +880 (31) 251 4059 </span><hr/>
+            </div>
+            <div id="dhanmondiaddress" role="alert" onclick="dhanmondi(), closeContent()">
+              <p class="font-weight-bold text-danger">Dhanmondi Branch</p> 
+              <span>Concord Royal Court (2nd Floor), House No: 275/G (Old) 40 (New), Road: 27 (Old) 16 (New), Dhanmondi R/A, Dhaka-1209<br/>Telephone : +88 09609994352, 16409 (Hotline)<br/>Email : idlcsldhn@idlc.com<br/>Fax : +88-02-9102622 </span><hr/>
+            </div>
+            <div id="mohakhaliaddress" role="alert" onclick="mohakhali(), closeContent()">
+              <p class="font-weight-bold text-danger">DOHS Mohakhali Branch</p> 
+              <span>B.H Nibash, House # B105 (3rd Floor, North Side), Flat # 4(A), Road # 08, New DOHS, Mohakhali, Dhaka- 1206<br/>Telephone : +88 09609994352, 16409 (Hotline)<br/>Email : idlcsldohs@idlc.com<br/>Fax : +880 (2) 871 4510 </span><hr/>
+            </div>
+            <div id="gazipurddress" role="alert" onclick="gazipur(), closeContent()">
+              <p class="font-weight-bold text-danger">Gazipur Branch</p> 
+              <span>Rahmat Tower (2nd Floor), Holding No. 1034, Mouza: Outpara, Joydebpur, Gazipur 1700 <br/>Telephone : +88 09609994352, 16409 (Hotline)<br/>Email : idlcslgazipur@idlc.com<br/>Fax : +88-02-9263539 </span><hr/>
+            </div>
+            <div id="narayanganjaddress" role="alert" onclick="narayanganj(), closeContent()">
+              <p class="font-weight-bold text-danger">Narayangonj Branch</p> 
+              <span>Sattar Tower (Ground floor) Municipal Holding No. 50 S.M. Maleh Road, Tanbazar, P.S - Narayanganj, Narayanganj –1400.<br/>Telephone : +88 09609994352, 16409 (Hotline)<br/>Email : idlcslng@IDLC.com<br/>Fax : +88-02-7632896 </span><hr/>
+            </div>
+            <div id="sylhetaddress" role="alert" onclick="sylhet(), closeContent()">
+              <p class="font-weight-bold text-danger">Sylhet Branch</p> 
+              <span>RN Tower (4th Floor), Chowhatta, Sylhet<br/>Telephone : +88 09609994352, 16409 (Hotline)<br/>Email : idlcslsylhet@idlc.com<br/>Fax : +880 (821) 728 244 </span><hr/>
+            </div>
+            <div id="uttaraaddress" role="alert" onclick="uttara(), closeContent()">
+              <p class="font-weight-bold text-danger">Uttara Branch</p> 
+              <span>Monsur Complex (4th Floor), Plot # 59/A, Road # 7, Sector # 4, Uttara Model Town, Dhaka 1230.<br/>Telephone : +88 09609994352, 16409 (Hotline)<br/>Email : idlcsluttara@idlc.com<br/>Fax : N/A</span> <hr/>
+            </div>
+          </ul>
+        </div>
+        <div class="col-md-8 col-sm-12" style="visibility: visible; animation-delay: 300ms; animation-name: fadeIn;"> 
+           
+            <div id="allaadd" style="display: block;"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d233668.38703701727!2d90.27923985484969!3d23.78057325798568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbdd5904c2!2sDhaka!5e0!3m2!1sen!2sbd!4v1648453909672!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" width="100%" height="562" frameborder="0"></iframe></div>
+                
+            <div id="dhaka" style="display: none;"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.437909086068!2d90.41201221496738!3d23.731758684598443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b91f4f689add%3A0x23e467c061af696!2sDR%20Tower!5e0!3m2!1sen!2sbd!4v1648450217567!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" width="100%" height="562" frameborder="0"></iframe></div>
+
+            <div style="display: none;" id="gulshan"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.206664539455!2d90.41436831496823!3d23.775653984576937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c79f3816fd19%3A0xbd167f8fe775aea9!2sExport%20Import%20Bank%20Of%20Bangladesh%20Limited%2C%20Dhaka.!5e0!3m2!1sen!2sbd!4v1648450334132!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" width="100%" height="562" frameborder="0"></iframe></div>
+
+            <div style="display: none;" id="chattogram"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.842462501527!2d91.8095875149413!3d22.32179698531242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acdf3566b1bfbd%3A0x12d6963aaefdf18f!2sAyub%20Trade%20Center!5e0!3m2!1sen!2sbd!4v1648450404992!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" width="100%" height="562" frameborder="0"></iframe></div>
+
+            <div style="display: none;" id="dhanmondi"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.825504142862!2d90.36782811496778!3d23.75360118458782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf5180b9ac1b%3A0xe0663e9373fe271f!2sConcord%20Royal%20Court%2C%20Plot%20no.%20275%2C%20Rd%20No.%2027%2C%20Dhaka%201209!5e0!3m2!1sen!2sbd!4v1648450501704!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" width="100%" height="562" frameborder="0"></iframe></div>
+
+            <div style="display: none;" id="mohakhali"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14604.214110902623!2d90.39483818015387!3d23.781108153186228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c79c53cb42f5%3A0xb77a852a761c6b79!2s3rd%20Floor!5e0!3m2!1sen!2sbd!4v1648450582971!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" width="100%" height="562" frameborder="0"></iframe></div>
+            
+            <div style="display: none;" id="gazipur"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58325.271595520295!2d90.31688239531304!3d23.984139875380887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755db7b57eb7b33%3A0xfc026847c7de0ca5!2sBRAC%20Bank%20Limited!5e0!3m2!1sen!2sbd!4v1648450669536!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" width="100%" height="562" frameborder="0"></iframe></div>
+            
+            <div style="display: none;" id="narayanganj"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3646.6561993741334!2d90.38408761497132!3d23.93722538449772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c4bb0eb12f07%3A0x6073fbe79cbc26f9!2sSattar%20Tower%2C%20Dhaka%20-%20Mymensingh%20Hwy%2C%20Kunia%20Pachor%201704!5e0!3m2!1sen!2sbd!4v1648450752428!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" width="100%" height="562" frameborder="0"></iframe></div>
+            
+            <div style="display: none;" id="sylhet"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7238.040048751987!2d91.86625122507164!3d24.89729858614627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375054d6021e2d2d%3A0x63bafe3173fe4121!2sR%20N%20Tower!5e0!3m2!1sen!2sbd!4v1648450848659!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" width="100%" height="562" frameborder="0"></iframe></div>
+            
+            <div style="display: none;" id="uttara"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.768349248102!2d90.39876591496989!3d23.862358284534306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c426677f22a9%3A0xa1f34dbf7fae8c67!2s4th%20Floor!5e0!3m2!1sen!2sbd!4v1648450907994!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" width="100%" height="562" frameborder="0"></iframe></div>
+         
+        </div>
+      </div>
+
+    </div>
+
+ 
+<script>
+	
+	function addressChange(dist){
+		
+		if(dist == "dhaka"){
+			dhaka();
+			dhakaaddress();
+		}else if(dist == "gulshan"){
+      gulshan(); gulshanaddress();
+		}else if(dist == "chattogram"){
+      chattogram(); chattogramaddress();
+		}else if(dist == "dhanmondi"){
+      dhanmondi(); dhanmondiaddress();
+		}else if(dist == "mohakhali"){
+      mohakhali(); mohakhaliaddress();
+		}else if(dist == "gazipur"){
+      gazipur(); gazipurddress();
+		}else if(dist == "narayanganj"){
+      narayanganj(); narayanganjaddress();
+		}else if(dist == "sylhet"){
+      sylhet(); sylhetaddress();
+		}else if(dist == "uttara"){
+      uttara(); uttaraaddress();
+		}else if(dist == "all"){
+      alladdress();
+		}
+			
+	}
+	
+  function dhaka() {   
+   document.getElementById("dhaka").style.display = "block"; 
+   document.getElementById("gulshan").style.display = "none"; 
+   document.getElementById("chattogram").style.display = "none"; 
+   document.getElementById("dhanmondi").style.display = "none"; 
+   document.getElementById("mohakhali").style.display = "none"; 
+   document.getElementById("gazipur").style.display = "none"; 
+   document.getElementById("narayanganj").style.display = "none"; 
+   document.getElementById("sylhet").style.display = "none";  
+   document.getElementById("uttara").style.display = "none"; 
+   document.getElementById("allaadd").style.display = "none"; 
+  
+  }
+
+
+  function gulshan() {   
+   document.getElementById("dhaka").style.display = "none"; 
+   document.getElementById("gulshan").style.display = "block"; 
+   document.getElementById("chattogram").style.display = "none"; 
+   document.getElementById("dhanmondi").style.display = "none"; 
+   document.getElementById("mohakhali").style.display = "none"; 
+   document.getElementById("gazipur").style.display = "none"; 
+   document.getElementById("narayanganj").style.display = "none"; 
+   document.getElementById("sylhet").style.display = "none";  
+   document.getElementById("uttara").style.display = "none"; 
+   document.getElementById("allaadd").style.display = "none"; 
+  
+  }
+  function chattogram() {   
+   document.getElementById("dhaka").style.display = "none"; 
+   document.getElementById("gulshan").style.display = "none"; 
+   document.getElementById("chattogram").style.display = "block"; 
+   document.getElementById("dhanmondi").style.display = "none"; 
+   document.getElementById("mohakhali").style.display = "none"; 
+   document.getElementById("gazipur").style.display = "none"; 
+   document.getElementById("narayanganj").style.display = "none"; 
+   document.getElementById("sylhet").style.display = "none";  
+   document.getElementById("uttara").style.display = "none"; 
+   document.getElementById("allaadd").style.display = "none"; 
+  
+  }
+
+  function dhanmondi() {   
+   document.getElementById("dhaka").style.display = "none"; 
+   document.getElementById("gulshan").style.display = "none"; 
+   document.getElementById("chattogram").style.display = "none"; 
+   document.getElementById("dhanmondi").style.display = "block"; 
+   document.getElementById("mohakhali").style.display = "none"; 
+   document.getElementById("gazipur").style.display = "none"; 
+   document.getElementById("narayanganj").style.display = "none"; 
+   document.getElementById("sylhet").style.display = "none";  
+   document.getElementById("uttara").style.display = "none"; 
+   document.getElementById("allaadd").style.display = "none"; 
+  
+  }
+  function mohakhali() {   
+   document.getElementById("dhaka").style.display = "none"; 
+   document.getElementById("gulshan").style.display = "none"; 
+   document.getElementById("chattogram").style.display = "none"; 
+   document.getElementById("dhanmondi").style.display = "none"; 
+   document.getElementById("mohakhali").style.display = "block"; 
+   document.getElementById("gazipur").style.display = "none"; 
+   document.getElementById("narayanganj").style.display = "none"; 
+   document.getElementById("sylhet").style.display = "none";  
+   document.getElementById("uttara").style.display = "none"; 
+   document.getElementById("allaadd").style.display = "none"; 
+  
+  }
+  function gazipur() {   
+   document.getElementById("dhaka").style.display = "none"; 
+   document.getElementById("gulshan").style.display = "none"; 
+   document.getElementById("chattogram").style.display = "none"; 
+   document.getElementById("dhanmondi").style.display = "none"; 
+   document.getElementById("mohakhali").style.display = "none"; 
+   document.getElementById("gazipur").style.display = "block"; 
+   document.getElementById("narayanganj").style.display = "none"; 
+   document.getElementById("sylhet").style.display = "none";  
+   document.getElementById("uttara").style.display = "none"; 
+   document.getElementById("allaadd").style.display = "none"; 
+  
+  }
+  function narayanganj() {   
+   document.getElementById("dhaka").style.display = "none"; 
+   document.getElementById("gulshan").style.display = "none"; 
+   document.getElementById("chattogram").style.display = "none"; 
+   document.getElementById("dhanmondi").style.display = "none"; 
+   document.getElementById("mohakhali").style.display = "none"; 
+   document.getElementById("gazipur").style.display = "none"; 
+   document.getElementById("narayanganj").style.display = "block"; 
+   document.getElementById("sylhet").style.display = "none";  
+   document.getElementById("uttara").style.display = "none"; 
+   document.getElementById("allaadd").style.display = "none"; 
+  
+  }
+  function sylhet() {   
+   document.getElementById("dhaka").style.display = "none"; 
+   document.getElementById("gulshan").style.display = "none"; 
+   document.getElementById("chattogram").style.display = "none"; 
+   document.getElementById("dhanmondi").style.display = "none"; 
+   document.getElementById("mohakhali").style.display = "none"; 
+   document.getElementById("gazipur").style.display = "none"; 
+   document.getElementById("narayanganj").style.display = "none"; 
+   document.getElementById("sylhet").style.display = "block";  
+   document.getElementById("uttara").style.display = "none"; 
+   document.getElementById("allaadd").style.display = "none"; 
+  
+  }
+  function uttara() {   
+   document.getElementById("dhaka").style.display = "none"; 
+   document.getElementById("gulshan").style.display = "none"; 
+   document.getElementById("chattogram").style.display = "none"; 
+   document.getElementById("dhanmondi").style.display = "none"; 
+   document.getElementById("mohakhali").style.display = "none"; 
+   document.getElementById("gazipur").style.display = "none"; 
+   document.getElementById("narayanganj").style.display = "none"; 
+   document.getElementById("sylhet").style.display = "none";  
+   document.getElementById("uttara").style.display = "block"; 
+   document.getElementById("allaadd").style.display = "none"; 
+  
+  }
+// button
+  function dhakaaddress() {   
+   document.getElementById("dhakaaddress").style.display = "block"; 
+   document.getElementById("gulshanaddress").style.display = "none"; 
+   document.getElementById("chattogramaddress").style.display = "none"; 
+   document.getElementById("dhanmondiaddress").style.display = "none"; 
+   document.getElementById("mohakhaliaddress").style.display = "none"; 
+   document.getElementById("gazipurddress").style.display = "none"; 
+   document.getElementById("narayanganjaddress").style.display = "none"; 
+   document.getElementById("sylhetaddress").style.display = "none"; 
+   document.getElementById("uttaraaddress").style.display = "none";  
+  }
+
+
+  function gulshanaddress() {   
+   document.getElementById("dhakaaddress").style.display = "none"; 
+   document.getElementById("gulshanaddress").style.display = "block"; 
+   document.getElementById("chattogramaddress").style.display = "none"; 
+   document.getElementById("dhanmondiaddress").style.display = "none"; 
+   document.getElementById("mohakhaliaddress").style.display = "none"; 
+   document.getElementById("gazipurddress").style.display = "none"; 
+   document.getElementById("narayanganjaddress").style.display = "none"; 
+   document.getElementById("sylhetaddress").style.display = "none"; 
+   document.getElementById("uttaraaddress").style.display = "none";  
+  }
+  
+  function chattogramaddress() {   
+   document.getElementById("dhakaaddress").style.display = "none"; 
+   document.getElementById("gulshanaddress").style.display = "none"; 
+   document.getElementById("chattogramaddress").style.display = "block"; 
+   document.getElementById("dhanmondiaddress").style.display = "none"; 
+   document.getElementById("mohakhaliaddress").style.display = "none"; 
+   document.getElementById("gazipurddress").style.display = "none"; 
+   document.getElementById("narayanganjaddress").style.display = "none"; 
+   document.getElementById("sylhetaddress").style.display = "none"; 
+   document.getElementById("uttaraaddress").style.display = "none";  
+  }
+
+  function dhanmondiaddress() {   
+   document.getElementById("dhakaaddress").style.display = "none"; 
+   document.getElementById("gulshanaddress").style.display = "none"; 
+   document.getElementById("chattogramaddress").style.display = "none"; 
+   document.getElementById("dhanmondiaddress").style.display = "block"; 
+   document.getElementById("mohakhaliaddress").style.display = "none"; 
+   document.getElementById("gazipurddress").style.display = "none"; 
+   document.getElementById("narayanganjaddress").style.display = "none"; 
+   document.getElementById("sylhetaddress").style.display = "none"; 
+   document.getElementById("uttaraaddress").style.display = "none";  
+  }
+
+  function mohakhaliaddress() {   
+   document.getElementById("dhakaaddress").style.display = "none"; 
+   document.getElementById("gulshanaddress").style.display = "none"; 
+   document.getElementById("chattogramaddress").style.display = "none"; 
+   document.getElementById("dhanmondiaddress").style.display = "none"; 
+   document.getElementById("mohakhaliaddress").style.display = "block"; 
+   document.getElementById("gazipurddress").style.display = "none"; 
+   document.getElementById("narayanganjaddress").style.display = "none"; 
+   document.getElementById("sylhetaddress").style.display = "none"; 
+   document.getElementById("uttaraaddress").style.display = "none";  
+  }
+  function gazipurddress() {   
+   document.getElementById("dhakaaddress").style.display = "none"; 
+   document.getElementById("gulshanaddress").style.display = "none"; 
+   document.getElementById("chattogramaddress").style.display = "none"; 
+   document.getElementById("dhanmondiaddress").style.display = "none"; 
+   document.getElementById("mohakhaliaddress").style.display = "none"; 
+   document.getElementById("gazipurddress").style.display = "block"; 
+   document.getElementById("narayanganjaddress").style.display = "none"; 
+   document.getElementById("sylhetaddress").style.display = "none"; 
+   document.getElementById("uttaraaddress").style.display = "none";  
+  }
+  function narayanganjaddress() {   
+   document.getElementById("dhakaaddress").style.display = "none"; 
+   document.getElementById("gulshanaddress").style.display = "none"; 
+   document.getElementById("chattogramaddress").style.display = "none"; 
+   document.getElementById("dhanmondiaddress").style.display = "none"; 
+   document.getElementById("mohakhaliaddress").style.display = "none"; 
+   document.getElementById("gazipurddress").style.display = "none"; 
+   document.getElementById("narayanganjaddress").style.display = "block"; 
+   document.getElementById("sylhetaddress").style.display = "none"; 
+   document.getElementById("uttaraaddress").style.display = "none";  
+  }
+  function sylhetaddress() {   
+   document.getElementById("dhakaaddress").style.display = "none"; 
+   document.getElementById("gulshanaddress").style.display = "none"; 
+   document.getElementById("chattogramaddress").style.display = "none"; 
+   document.getElementById("dhanmondiaddress").style.display = "none"; 
+   document.getElementById("mohakhaliaddress").style.display = "none"; 
+   document.getElementById("gazipurddress").style.display = "none"; 
+   document.getElementById("narayanganjaddress").style.display = "none"; 
+   document.getElementById("sylhetaddress").style.display = "block"; 
+   document.getElementById("uttaraaddress").style.display = "none";  
+  }
+
+  function uttaraaddress() {   
+   document.getElementById("dhakaaddress").style.display = "none"; 
+   document.getElementById("gulshanaddress").style.display = "none"; 
+   document.getElementById("chattogramaddress").style.display = "none"; 
+   document.getElementById("dhanmondiaddress").style.display = "none"; 
+   document.getElementById("mohakhaliaddress").style.display = "none"; 
+   document.getElementById("gazipurddress").style.display = "none"; 
+   document.getElementById("narayanganjaddress").style.display = "none"; 
+   document.getElementById("sylhetaddress").style.display = "none"; 
+   document.getElementById("uttaraaddress").style.display = "block";  
+  }
+  function alladdress() {   
+   document.getElementById("dhakaaddress").style.display = "block"; 
+   document.getElementById("gulshanaddress").style.display = "block"; 
+   document.getElementById("chattogramaddress").style.display = "block"; 
+   document.getElementById("dhanmondiaddress").style.display = "block"; 
+   document.getElementById("mohakhaliaddress").style.display = "block"; 
+   document.getElementById("gazipurddress").style.display = "block"; 
+   document.getElementById("narayanganjaddress").style.display = "block"; 
+   document.getElementById("sylhetaddress").style.display = "block"; 
+   document.getElementById("uttaraaddress").style.display = "block";  
+
+
+   document.getElementById("allaadd").style.display = "block";
+   document.getElementById("dhaka").style.display = "none"; 
+   document.getElementById("gulshan").style.display = "none"; 
+   document.getElementById("chattogram").style.display = "none"; 
+   document.getElementById("dhanmondi").style.display = "none"; 
+   document.getElementById("mohakhali").style.display = "none"; 
+   document.getElementById("gazipur").style.display = "none"; 
+   document.getElementById("narayanganj").style.display = "none"; 
+   document.getElementById("sylhet").style.display = "none";  
+   document.getElementById("uttara").style.display = "none";   
+  }
+  
+  //btn
+  function navbarContent() {  
+   
+   var element = document.getElementById("navbarContent");
+   element.classList.add("navbarContent-show");
+   element.classList.remove("navbarContent");
+
+  //  document.getElementById("myiconn").style.display = "none";
+  var myiconn = document.getElementById("myiconn");
+  myiconn.classList.add("myicon-show");
+       
+  }
+  function closeContent() {     
+  //  document.getElementById("myiconn").style.display = "inline-block";   
+
+  var myiconn = document.getElementById("myiconn");
+  myiconn.classList.remove("myicon-show");
+
+  var element = document.getElementById("navbarContent");
+   element.classList.add("navbarContent");
+   element.classList.remove("navbarContent-show");  
+  }
+
+   
+ 
+
+
+  </script>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
